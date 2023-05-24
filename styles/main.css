@@ -1,5 +1,9 @@
-
-main {
-  background-color: red;
-
+.board-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin-top: 48px;
+  margin-left: 260px;
+  background-color: aqua;
+  z-index: 3;
 }
