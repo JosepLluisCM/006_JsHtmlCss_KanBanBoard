@@ -5,7 +5,7 @@
     <title>KanBan Board</title>
 
     <!--Responsive Design-->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="a KanBan board">
 
@@ -23,25 +23,62 @@
   </head>
 
   <body>
-    <!-- <img class="bg" src="/images/background.jpg "> -->
-    <nav id="header">
-      <div class="header_wrapper">
-        <p>Header</p>
-        <p>Search</p>
-      </div>
-    </nav>
+    <div id="root">
 
-    <nav id="sidebar">
-      <div class="sidebar_wrapper">
-        <p>profile</p>
-        <p>info</p>
+      <div class="container">
+
+        <div class="header-container">
+
+          <nav id="header" class="header">
+            <p>Header</p>
+            <p>Search</p>
+            <p>Search</p>
+            <p>Search</p>
+            <p>Search</p>
+          </nav>
+        </div>
+
+        <div class="main-container">
+
+          <div class="sidebar-container">
+
+            <nav id="sidebar" class="sidebar">
+              <p>sadf</p>
+              <p>sadf</p>
+              <p>sadf</p>
+              <p>sadf</p>
+            </nav>
+          </div>
+
+          <div class="board-container">
+            <div class="subHeader">
+              <p>TITLE</p>
+            </div>
+            <div class="board">
+              <div class="list-container">
+                <div class="list-content">
+                  <div class="list-header"></div>
+                  <div class="list-cards"></div>
+                  <div class="card-creator"></div>
+                </div>
+              </div>
+              <div class="list-creator-container">
+                <input type="text" id="newList" name="newList">
+                <button class="list-creator-button list-creator-button">Add List</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
       </div>
-    </nav>
+    </div>
     
-    <main id="main-board">
-      <div class="board-wrapper">
-      </div>
-    </main>
+    
     
     
 
@@ -52,3 +89,36 @@
   </body>
 
 </html>
+
+
+  <!-- <nav id="header">
+        <div class="headerWrapper">
+          <p>Header</p>
+          <p>Search</p>
+        </div>
+      </nav>
+
+      <nav id="sidebar">
+        <div class="sidebarWrapper">
+          <p>profile</p>
+          <p>info</p>
+        </div>
+      </nav> -->
+      
+      
+     <!--  <div class="boardWrapper">
+        <div class="subHeader"></div>
+        <div class="board-canvas">
+          <div class="list-wrapper">
+            <div class="list">
+              <div class="card">Card1</div>
+              <div class="card">Card2</div>
+              <div class="card">Card3</div>
+            </div>
+          </div>
+          <div class="add-list-wrapper">
+            <input type="text" id="newList" name="newList">
+            <button class="add-list-button js-add-list-button">Add List</button>
+          </div>
+        </div>
+      </div> -->
