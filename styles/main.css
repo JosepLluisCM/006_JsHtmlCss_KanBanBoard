@@ -12,6 +12,7 @@
   position: relative;
   border: 1px solid greenyellow;
   flex: 1 1 0%;
+  padding-left: 260px;
 }
 
 .subHeader {
@@ -28,6 +29,11 @@
   border: 2px solid pink;
   height: 100%;
   
+}
+
+.lists-array {
+  display: block;
+  flex-wrap: nowrap;
 }
 
 .list-container {
@@ -81,7 +87,7 @@
 .card-creator {
   padding: 5px;
   width: 100%;
-  border: 1px solid red;
+  border: 1px solid green;
   margin-top: 15px;
   flex: 0 0 auto;
   position: relative;
