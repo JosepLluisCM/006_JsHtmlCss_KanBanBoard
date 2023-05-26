@@ -3,16 +3,19 @@
   flex-direction: row;
   position: relative;
   border: 3px solid blue;
-  flex: 1 1 0%;
+  flex-grow: 1;
+  /* overflow-x: hidden; */
+  width: 100%;
 }
 
 .board-container {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   position: relative;
   border: 1px solid greenyellow;
-  flex: 1 1 0%;
-  padding-left: 260px;
+  border: 2px solid red;
+  /* padding-left: 260px; */
 }
 
 .subHeader {
@@ -28,16 +31,18 @@
 .board {
   border: 2px solid pink;
   height: 100%;
-  
+  display: flex;
+  overflow-x: scroll;
 }
 
 .lists-array {
-  display: block;
-  flex-wrap: nowrap;
+  display: flex;
+  /* display: block; */
+  /* flex-wrap: nowrap; */
 }
 
 .list-container {
-  display: inline-block;
+  /* display: inline-block; */
   width: 272px;
   height: 100%;
   vertical-align: top;

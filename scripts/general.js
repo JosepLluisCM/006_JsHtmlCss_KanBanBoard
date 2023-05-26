@@ -8,6 +8,10 @@ function renderBoard() {
   let listsHTML = '';
 
   listsArr.forEach( (list) => {
+    // const input = ....
+    // const addCardButton = document.createElement("BUTTON");
+    // addCardButton.addEventListener(() => { /* Tot lo de baix */})
+
     const HTML = `
       <div class="list-container">
         <div class="list-content">
@@ -35,7 +39,7 @@ document.querySelector('.js-list-creator-button').addEventListener('click', () =
   
   let listInput = document.querySelector('.js-newList').value;
   if (listInput.length) {
-    //console.log(listInput);
+    console.log(listInput);
     addList(listInput);
     document.querySelector('.js-newList').value = '';
   };

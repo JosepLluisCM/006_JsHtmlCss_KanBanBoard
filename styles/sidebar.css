@@ -1,7 +1,8 @@
 .sidebar-container {
-  position: fixed;
+  /* position: fixed; */
   height: 100%;
   width: 260px;
+  min-width: 260px;
   border: 1px solid orange;
 }
 

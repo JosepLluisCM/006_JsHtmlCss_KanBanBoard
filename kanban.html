@@ -23,60 +23,82 @@
   </head>
 
   <body>
-    <div id="root">
+    <!-- Borrar containers innecessaris si nomes 1 child, ajuntar csss -->
+    <div class="header-container">
+      <nav id="header" class="header">
+        <p>Header</p>
+        <p>Search</p>
+        <p>Search</p>
+        <p>Search</p>
+        <p>Search</p>
+      </nav>
+    </div>
 
-      <div class="container">
+    <div class="main-container">
 
-        <div class="header-container">
+      <!-- Aqui també , posar sidebar com a flex autoajust-->
+      <div class="sidebar-container">
+        <nav id="sidebar" class="sidebar">
+          <p>sadf</p>
+          <p>sadf</p>
+          <p>sadf</p>
+          <p>sadf</p>
+        </nav>
+      </div>
 
-          <nav id="header" class="header">
-            <p>Header</p>
-            <p>Search</p>
-            <p>Search</p>
-            <p>Search</p>
-            <p>Search</p>
-          </nav>
+      <div class="board-container">
+        <div class="subHeader">
+          <p>TITLE</p>
         </div>
-
-        <div class="main-container">
-
-          <div class="sidebar-container">
-
-            <nav id="sidebar" class="sidebar">
-              <p>sadf</p>
-              <p>sadf</p>
-              <p>sadf</p>
-              <p>sadf</p>
-            </nav>
-          </div>
-
-          <div class="board-container">
-            <div class="subHeader">
-              <p>TITLE</p>
-            </div>
-            <div class="board js-board">
-              <div class="lists-array js-lists-array"></div>
-              <div class="list-creator-container">
-                <input type="text" class="newList js-newList" placeholder="List title">
-                <button class="list-creator-button js-list-creator-button">Add List</button>
+        <!-- posar ids a les coses uniques, borrar classes js -->
+        <div class="board js-board">
+          <div class="lists-array js-lists-array">
+            
+      <!--       <div class="list-container">
+              <div class="list-content">
+                <div class="list-title">${list.title}</div>
+                <div class="list-cards js-list-cards">
+                  
+                </div>
+                <div class="card-creator">
+                  <input type="text" class="newCard js-newCard" placeholder="Card Content" data-list-title="${list.title}">
+                  <button class="card-creator-button js-card-creator-button" data-list-title="${list.title}">Add Card</button>
+                </div>
               </div>
             </div>
+            <div class="list-container">
+              <div class="list-content">
+                <div class="list-title">${list.title}</div>
+                <div class="list-cards js-list-cards">
+                  
+                </div>
+                <div class="card-creator">
+                  <input type="text" class="newCard js-newCard" placeholder="Card Content" data-list-title="${list.title}">
+                  <button class="card-creator-button js-card-creator-button" data-list-title="${list.title}">Add Card</button>
+                </div>
+              </div>
+            </div>
+            <div class="list-container">
+              <div class="list-content">
+                <div class="list-title">${list.title}</div>
+                <div class="list-cards js-list-cards">
+                  
+                </div>
+                <div class="card-creator">
+                  <input type="text" class="newCard js-newCard" placeholder="Card Content" data-list-title="${list.title}">
+                  <button class="card-creator-button js-card-creator-button" data-list-title="${list.title}">Add Card</button>
+                </div>
+              </div>
+            </div>
+ -->
+          </div>
+          <div class="list-creator-container">
+            <input type="text" class="newList js-newList" placeholder="List title">
+            <button class="list-creator-button js-list-creator-button">Add List</button>
           </div>
         </div>
-
-
-
-
-
-
       </div>
     </div>
-    
-    
-    
-    
-
-
 
     <!--Import scripts-->
     <script src="scripts/general.js"></script>
