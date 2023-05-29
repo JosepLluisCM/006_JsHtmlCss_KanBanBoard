@@ -19,131 +19,56 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles//sidebar.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/list.css">
 
   </head>
 
+  <!--Flex body with two childs, the header and the rest-->
   <body>
-    <!-- Borrar containers innecessaris si nomes 1 child, ajuntar csss -->
-    <div class="header-container">
-      <nav id="header" class="header">
-        <p>Header</p>
-        <p>Search</p>
-        <p>Search</p>
-        <p>Search</p>
-        <p>Search</p>
+    <nav id="header">
+      <p>Header</p>
+      <p>Search</p>
+      <p>Search</p>
+      <p>Search</p>
+      <p>Search</p>
+    </nav>
+    
+    <!--Flex Main Container with two childs, sidebar and the rest-->
+    <div id="main-container">
+
+      <nav id="sidebar">
+        <p>side</p>
+        <p>side</p>
+        <p>side</p>
+        <p>side</p>
       </nav>
-    </div>
+      
+      <!--Flex container with two childs, the subheader and the board-->
+      <div id="board-container">
 
-    <div class="main-container">
-
-      <!-- Aqui també , posar sidebar com a flex autoajust-->
-      <div class="sidebar-container">
-        <nav id="sidebar" class="sidebar">
-          <p>sadf</p>
-          <p>sadf</p>
-          <p>sadf</p>
-          <p>sadf</p>
-        </nav>
-      </div>
-
-      <div class="board-container">
-        <div class="subHeader">
+        <div id="subHeader">
           <p>TITLE</p>
         </div>
-        <!-- posar ids a les coses uniques, borrar classes js -->
-        <div class="board js-board">
-          <div class="lists-array js-lists-array">
-            
-      <!--       <div class="list-container">
-              <div class="list-content">
-                <div class="list-title">${list.title}</div>
-                <div class="list-cards js-list-cards">
-                  
-                </div>
-                <div class="card-creator">
-                  <input type="text" class="newCard js-newCard" placeholder="Card Content" data-list-title="${list.title}">
-                  <button class="card-creator-button js-card-creator-button" data-list-title="${list.title}">Add Card</button>
-                </div>
-              </div>
-            </div>
-            <div class="list-container">
-              <div class="list-content">
-                <div class="list-title">${list.title}</div>
-                <div class="list-cards js-list-cards">
-                  
-                </div>
-                <div class="card-creator">
-                  <input type="text" class="newCard js-newCard" placeholder="Card Content" data-list-title="${list.title}">
-                  <button class="card-creator-button js-card-creator-button" data-list-title="${list.title}">Add Card</button>
-                </div>
-              </div>
-            </div>
-            <div class="list-container">
-              <div class="list-content">
-                <div class="list-title">${list.title}</div>
-                <div class="list-cards js-list-cards">
-                  
-                </div>
-                <div class="card-creator">
-                  <input type="text" class="newCard js-newCard" placeholder="Card Content" data-list-title="${list.title}">
-                  <button class="card-creator-button js-card-creator-button" data-list-title="${list.title}">Add Card</button>
-                </div>
-              </div>
-            </div>
- -->
+
+        <!--Board block element with two childs, the list array and the creator of lists-->
+        <div id="board">
+          <div id="lists-array">
+
           </div>
-          <div class="list-creator-container">
-            <input type="text" class="newList js-newList" placeholder="List title">
-            <button class="list-creator-button js-list-creator-button">Add List</button>
+
+          <div id="list-creator-container">
+            <input type="text" class="newList" placeholder="List title">
+            <button class="list-creator-button">Add List</button>
           </div>
         </div>
+
       </div>
+
     </div>
 
     <!--Import scripts-->
     <script src="scripts/general.js"></script>
+
   </body>
 
 </html>
-
-
-<!-- <p class="card">Card 1</p>
-<p class="card">Card 2</p>
-<p class="card">Card 3</p>
-<p class="card">Card 1</p> -->
-
-
-
-
-
-  <!-- <nav id="header">
-        <div class="headerWrapper">
-          <p>Header</p>
-          <p>Search</p>
-        </div>
-      </nav>
-
-      <nav id="sidebar">
-        <div class="sidebarWrapper">
-          <p>profile</p>
-          <p>info</p>
-        </div>
-      </nav> -->
-      
-      
-     <!--  <div class="boardWrapper">
-        <div class="subHeader"></div>
-        <div class="board-canvas">
-          <div class="list-wrapper">
-            <div class="list">
-              <div class="card">Card1</div>
-              <div class="card">Card2</div>
-              <div class="card">Card3</div>
-            </div>
-          </div>
-          <div class="add-list-wrapper">
-            <input type="text" id="newList" name="newList">
-            <button class="add-list-button js-add-list-button">Add List</button>
-          </div>
-        </div>
-      </div> -->
