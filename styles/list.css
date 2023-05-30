@@ -4,6 +4,7 @@
   display: inline-block;
   vertical-align: top;
   white-space: nowrap;
+  border: 1px solid blue;
 }
 
 .list-content {
@@ -46,4 +47,5 @@
   margin-top: 15px;
   flex: 0 0 auto;
   position: relative;
+  border: 1px solid green;
 } 

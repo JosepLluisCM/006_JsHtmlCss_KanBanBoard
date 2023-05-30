@@ -29,59 +29,10 @@
   
 }
 
-#lists-array {
+#listsArray {
   display: inline-block;
 }
 
-.list-container {
-  width: 272px;
-  height: 100%;
-  display: inline-block;
-  vertical-align: top;
-  white-space: nowrap;
-}
-
-.list-content {
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  max-height: 100%;
-  position: relative;
-  width: 100%;
-}
-
-.list-title {
-  width: 100%;
-  height: 48px;
-  background-color: bisque;
-  margin-bottom: 15px;
-  flex: 0 0 auto;
-  position: relative;
-}
-
-.list-cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  gap: 7px;
-  flex: 1 1 auto;
-  overflow-y: auto;
-}
-
-.card {
-  width: 100%;
-  height: 70px;
-  background-color: cadetblue;
-}
-
-.card-creator {
-  padding: 5px;
-  width: 100%;
-  margin-top: 15px;
-  flex: 0 0 auto;
-  position: relative;
-} 
 
 #list-creator-container {
   display: inline-block;

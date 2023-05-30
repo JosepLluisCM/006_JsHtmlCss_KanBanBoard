@@ -1,90 +1,52 @@
-/*__________MODEL__________*/
-/*__________VIEW__________*/
+
+//In this array is saved all lists in thge page
 let listsArr = [];
 
-//let listsHTML = [];
-
 function renderBoard() {
-  let listsHTML = '';
+
+  document.getElementById('listsArray').innerHTML = "";
 
   listsArr.forEach( (list) => {
-    // const input = ....
-    // const addCardButton = document.createElement("BUTTON");
-    // addCardButton.addEventListener(() => { /* Tot lo de baix */})
+    //first we write a list to the html file
+    const input = injectList(list);
 
-    const HTML = `
-      <div class="list-container">
-        <div class="list-content">
-          <div class="list-title">${list.title}</div>
-          <div class="list-cards">
-            
-          </div>
-          <div class="card-creator">
-            <input type="text" class="newCard" placeholder="Card Content" data-list-title="${list.title}">
-            <button class="card-creator-button" data-list-title="${list.title}">Add Card</button>
-          </div>
-        </div>
-      </div>
-    `;
-    listsHTML += HTML;
+    //next we listen for the addCCart button
+    input.button.addEventListener('click', () => {
+      //console.log(input.value.value);
+      if (input.value.value.length) {
+        list.cards.push(input.value.value);
+        renderBoard();
+      };
+    });
+    
+
   });
 
-  document.querySelector('#lists-array').innerHTML = listsHTML;
-}
-
-/*__________CONTROLLER__________*/
-
-//EVENT LISTENERS
-document.querySelector('.list-creator-button').addEventListener('click', () => {
   
-  let listInput = document.querySelector('.newList').value;
-  if (listInput.length) {
-    console.log(listInput);
-    addList(listInput);
-    document.querySelector('.newList').value = '';
-  };
-});
-
-
-
-document.querySelector('.board').addEventListener('click', (event) => {
-  if (event.target.classList.contains('card-creator-button')) {
-    //pick the id from the button pressed
-    const listId = event.target.dataset.listTitle;
-    //console.log(event.target.dataset); 
-
-    const cardInput = document.querySelector('.newCard').value;
-    if (cardInput.length) {
-      addCard(cardInput, listId);
-      document.querySelector('.newCard').value = '';
-      console.log(cardInput + ',' + typeof listId);
-    };
-    
-    
-  } 
-});
-
-
-function addCard(cardInput, listId) {
   
-  const listToUpdate = listsArr.findIndex( element => element.title == listId);
-  console.log(listToUpdate);
-
-  listsArr[listToUpdate].cards.push(cardInput);
-  console.log(listsArr);
 }
 
 
+
+//Add list to listArr
 function addList(listTitle) {
   //console.log(`List Created with title: ${listTitle}`)
-
   let list = {
     title: listTitle,
     cards: []
   }
-
   listsArr.push(list);
-
+  
   renderBoard();
-
 }
+
+//listener for the add list button
+document.getElementById("list-creator-button").addEventListener('click', () => {
+  
+  let listInput = document.querySelector('.newList').value;
+  if (listInput.length) {
+    //console.log(listInput);
+    addList(listInput);
+    document.querySelector('.newList').value = '';
+  };
+});
