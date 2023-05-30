@@ -7,6 +7,7 @@
 
 :root {
   --bg-color: rgb(34, 39, 43);
+  --bg-accent-color: rgb(50, 59, 53);
   --text-gray-color: #9FADBC;
   --text-white-color: #FFFFFF;
   --list-bg-color: #101204;
@@ -30,6 +31,15 @@ body {
   overflow: hidden;
 }
 
+strong {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-gray-color);
+}
+
 button {
   cursor: pointer;
 }
@@ -41,6 +51,8 @@ select {
 input, select, button {
   font-family: Roboto, Arial;
 }
+
+
 
 /* These styles will limit text to 2 lines. Anything
    beyond 2 lines will be replaced with "..."
