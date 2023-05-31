@@ -6,6 +6,7 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+  position:relative;
   background-color: var(--bg-color);
   border-bottom: 1px solid var(--bg-accent-color);
 }
@@ -13,17 +14,45 @@
 #header a {
   /* margin-right: 25px; */
   padding: 7px 15px;
+  position: relative;
   
   border-radius: 5px;
   transition: background-color 0.15s;
 }
 #header a:hover {
   background-color: var(--bg-accent-color);
-  
+}
+
+.button-clicked {
+  background-color: rgba(255,255,255,0.4);
 }
 
 .logo {
   font-size: 18px;
+}
+
+.tooltip {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  border: 1px solid var(--bg-accent-color);
+  z-index: 10;
+  width: 200px;
+  top: 44px;
+  left: 0px;
+  background-color: var(--card-bg-color);
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+}
+.tooltip-clicked {
+  opacity: 1;
+}
+
+.tooltip-item {
+  font-size: 16px;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--bg-accent-color);
 }
 
 .search-bar {

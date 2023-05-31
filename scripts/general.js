@@ -50,3 +50,18 @@ document.getElementById("list-creator-button").addEventListener('click', () => {
     document.querySelector('.newList').value = '';
   };
 });
+
+
+//add listeners for the header buttons
+
+const headerButtonsList = document.querySelectorAll('.header-buttons');
+//console.log(headerButtonsList);
+let anyClicked = false;
+headerButtonsList.forEach( (button) => {
+  button.addEventListener('click', () => {
+    eraseTooltips();
+  
+    injectTooltip(button, anyClicked);
+    
+  });
+});
