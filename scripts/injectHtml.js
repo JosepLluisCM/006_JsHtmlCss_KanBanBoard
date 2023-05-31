@@ -32,12 +32,13 @@ function injectList(list) {
   const cardCreator = document.createElement('div');
   cardCreator.classList.add('card-creator');
   const inputCard = document.createElement('input');
-  inputCard.placeholder = 'Card Content';
+  inputCard.placeholder = 'Add a Card';
   inputCard.classList.add('newCard');
   cardCreator.appendChild(inputCard);
   const inputCardButton = document.createElement('button');
   inputCardButton.classList.add('card-creator-button');
-  inputCardButton.textContent = 'Add Card';
+  /* inputCardButton.textContent = 'Add Card'; */
+  inputCardButton.innerHTML = `<i class="fa-solid fa-plus fa-lg"></i>`;
   cardCreator.appendChild(inputCardButton);
   listContent.appendChild(cardCreator);
   

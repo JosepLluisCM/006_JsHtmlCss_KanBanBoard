@@ -7,10 +7,14 @@
 
 :root {
   --bg-color: rgb(34, 39, 43);
-  --bg-accent-color: rgb(50, 59, 53);
-  --text-gray-color: #9FADBC;
+  --bg-accent-color: rgb(54, 59, 65);
+  --bg-sidebar-color: rgba(23, 27, 32,0.85);
+  --text-gray-color: rgb(159, 173, 188);
   --text-white-color: #FFFFFF;
   --list-bg-color: #101204;
+  --card-bg-color: #22272b;
+
+ 
 }
 
 body {
@@ -31,13 +35,10 @@ body {
   overflow: hidden;
 }
 
-strong {
-  font-size: 16px;
-}
-
 a {
   text-decoration: none;
   color: var(--text-gray-color);
+  cursor: pointer;
 }
 
 button {
@@ -51,7 +52,6 @@ select {
 input, select, button {
   font-family: Roboto, Arial;
 }
-
 
 
 /* These styles will limit text to 2 lines. Anything

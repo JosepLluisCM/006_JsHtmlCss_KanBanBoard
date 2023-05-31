@@ -29,9 +29,9 @@
   <body>
     <nav id="header">
       <a><i class="fa-solid fa-bars fa-xl"></i></a>
-      <a href="http://127.0.0.1:5500/kanban.html"><div>
+      <a class="logo" href="http://127.0.0.1:5500/kanban.html"><div>
         <i class="fa-brands fa-square-js fa-xl"></i>
-        <strong> Lello</strong>
+        <strong> JLelos</strong>
       </div></a>
       <a href="http://127.0.0.1:5500/kanban.html">Workspaces <i class="fa-solid fa-angle-down"></i></a>
       <a href="http://127.0.0.1:5500/kanban.html">Recent <i class="fa-solid fa-angle-down"></i></a>
@@ -49,16 +49,31 @@
     <div id="main-container">
 
       <nav id="sidebar">
-        <p>side</p>
-        <p>side</p>
-        <p>side</p>
-        <p>side</p>
+        <div class="profile">
+          <h3>Josep Lluis Cid Marti</h3>
+          <button class="retract-button"><i class="fa-solid fa-arrows-up-to-line fa-rotate-270"></i></button>
+        </div>
+        <a class="sidebar-item"><i class="fa-solid fa-house"></i>
+           Boards
+        </a>
+        <a class="sidebar-item"><i class="fa-solid fa-user"></i>
+          Members
+        </a>
+        <a class="sidebar-item"><i class="fa-solid fa-gear"></i>
+          Workspace settings
+        </a>
+        <a class="sidebar-item"><i class="fa-solid fa-table"></i>
+          Table
+        </a>
+        <a class="sidebar-item"><i class="fa-solid fa-calendar-days"></i>
+          Calendar
+        </a>
       </nav>
       
       <!--Flex container with two childs, the subheader and the board-->
       <div id="board-container">
 
-        <div id="subHeader">
+        <div id="subHeader">         
           <h2>Web Learning Board</h2>
           <i class="fa-solid fa-star fa-xl"></i>
         </div>
@@ -67,8 +82,9 @@
         <div id="board">
           <div id="listsArray"></div>
           <div id="list-creator-container">
-            <input type="text" class="newList" placeholder="List title">
-            <button id="list-creator-button">Add List</button>
+            <input type="text" class="newList" placeholder="Add a new list">
+            <button id="list-creator-button"><i class="fa-solid fa-plus fa-lg"></i></button>
+            
           </div>
         </div>
 
