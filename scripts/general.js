@@ -9,21 +9,18 @@ function renderBoard() {
   listsArr.forEach( (list) => {
     //first we write a list to the html file
     const input = injectList(list);
-
     //next we listen for the addCCart button
     input.button.addEventListener('click', () => {
-      //console.log(input.value.value);
       if (input.value.value.length) {
         list.cards.push(input.value.value);
         renderBoard();
       };
     });
-    
 
+    input.editButton.addEventListener('click', () => {
+      console.log(list.title);
+    });
   });
-
-  
-  
 }
 
 
@@ -52,7 +49,8 @@ document.getElementById("list-creator-button").addEventListener('click', () => {
 });
 
 
-//Listen for the buttons
+
+//Listen for the header buttons
 const headerButtonsList = document.querySelectorAll('.header-buttons');
 headerButtonsList.forEach( (button) => {
   button.addEventListener('click', () => {
