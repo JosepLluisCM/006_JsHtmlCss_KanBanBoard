@@ -14,11 +14,13 @@ function injectList(list) {
   listHeader.classList.add('list-title');
   listHeader.textContent = list.title;
 
-  const deleteIcon = document.createElement('i');
-  deleteIcon.classList.add('fa-solid');
-  deleteIcon.classList.add('fa-pen-to-square');
-  listHeader.appendChild(deleteIcon);
-  editListModal(listHeader);
+  const editIcon = document.createElement('i');
+  editIcon.classList.add('fa-solid');
+  editIcon.classList.add('fa-pen-to-square');
+  listHeader.appendChild(editIcon);
+
+  //We create the modal
+  const modal = editListModal(listHeader);
 
   listContent.appendChild(listHeader);
 
@@ -52,12 +54,16 @@ function injectList(list) {
   listsArray.appendChild(listContainer);
 
   //we return all info we need, the input text and button for listener
-  const input = {
-    value: inputCard,
-    button: inputCardButton,
-    editButton: renameButton
-  };
-  return input;
+  const listInfo = [
+    {
+      value: inputCard,
+      button: inputCardButton,
+      edit: editIcon
+    },
+    modal
+  ];
+
+  return listInfo;
 }
 
 //function to create the Edit list modal
@@ -81,6 +87,14 @@ function editListModal(listHeader) {
     renameList.appendChild(deleteButton);
   editList.appendChild(renameList);
 listHeader.appendChild(editList);
+
+  const modal = {
+    modalWrapper: editList,
+    renameInput: renameInput,
+    renameButton: renameButton,
+    deleteButton: deleteButton
+  };
+  return modal;
 }
 
 function eraseTooltips() {

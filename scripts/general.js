@@ -8,17 +8,24 @@ function renderBoard() {
 
   listsArr.forEach( (list) => {
     //first we write a list to the html file
-    const input = injectList(list);
+    const listInfo = injectList(list);
     //next we listen for the addCCart button
-    input.button.addEventListener('click', () => {
-      if (input.value.value.length) {
-        list.cards.push(input.value.value);
+    listInfo[0].button.addEventListener('click', () => {
+      if (listInfo[0].value.value.length) {
+        list.cards.push(listInfo[0].value.value);
         renderBoard();
       };
     });
+    //we listen for the edit button press
+    listInfo[0].edit.addEventListener('click', () => {
+      listInfo[1].modalWrapper.classList.remove('edit-list-hidden');
+      
+      //Multiple options, we listen for escape and exit the modal
+      document.addEventListener('keydown', (event) => {
+        //console.log(event);
+        if (event.key === 'Escape') listInfo[1].modalWrapper.classList.add('edit-list-hidden');
+      });
 
-    input.editButton.addEventListener('click', () => {
-      console.log(list.title);
     });
   });
 }
