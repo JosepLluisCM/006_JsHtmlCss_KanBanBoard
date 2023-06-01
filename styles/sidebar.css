@@ -1,16 +1,19 @@
 
 #sidebar {
-  max-width: 260px;
-  min-width: 260px;
+  /* max-width: 260px;
+  min-width: 260px; */
+  width: 260px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  
-  
   background-color: var(--bg-sidebar-color);
-  
-
   backdrop-filter: blur(6px);
+}
+.sidebar-out {
+  min-width: 0px;
+  max-width: 0px;
+  opacity: 0;
+  /* border: 5px solid red; */
 }
 
 .profile {
@@ -23,20 +26,6 @@
   border-bottom: 1px solid var(--bg-accent-color);
 }
 
-
-.retract-button {
-  transform: scale(1.1);
-  margin-left: auto;
-  padding: 5px;
-  border: 1px solid var(--bg-accent-color);
-  border-radius: 5px;
-  background-color: var(--bg-sidebar-color);
-  color: var(--text-gray-color);
-  transition: background-color 0.15s;
-}
-.retract-button:hover {
-  background-color: var(--bg-accent-color);
-}
 
 .sidebar-item {
   padding: 10px 20px;

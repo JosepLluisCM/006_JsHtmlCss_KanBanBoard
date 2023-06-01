@@ -65,10 +65,30 @@ headerButtonsList.forEach( (button) => {
       tooltip.classList.add('tooltip-clicked');
     }
 
+    //Listener for clicks outside button for closing tooltip
+    document.addEventListener('click', (e) => {
+      //console.log(e.target.classList.value);
+      if(e.target.classList.value != 'header-buttons') {
+        tooltip.classList.remove('tooltip-clicked');
+      }
+    });
+
   });
 });
 
-
+//listen for the retract sidebar button
+const retract = document.getElementById('retract-button');
+const sidebar = document.getElementById('sidebar');
+retract.addEventListener('click', () => {
+  if(!retract.classList.contains('retract-clicked')) {
+    retract.classList.add('retract-clicked');
+    sidebar.classList.add('sidebar-out');
+  }
+  else {
+    retract.classList.remove('retract-clicked');
+    sidebar.classList.remove('sidebar-out');
+  }
+});
 
 /* 
 JS CREATION OF TOOLTIP, PARKED FOR NOW
