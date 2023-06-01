@@ -54,14 +54,24 @@ function injectList(list) {
 }
 
 
+function eraseTooltips() {
+  headerButtonsList.forEach( (button) => {
+    let tooltip = button.childNodes[3];
+    tooltip.classList.remove('tooltip-clicked');
+  });
+}
+
+/*
+JS CREATION OF TOOLTIP, PARKED FOR NOW
+
+
 //create the tooltip from scratch and show it in the page
 
-function injectTooltip(button) {
+function createTooltip(button) {
   //console.log(button);
-  if(button.childNodes.length === 3) button.childNodes[2].remove();
-  else {
-    const tooltip = document.createElement('div');
-    tooltip.classList.add('tooltip');
+  
+  tooltip = document.createElement('div');
+  tooltip.classList.add('tooltip');
 
   const tooltipItem = document.createElement('div');
   tooltipItem.textContent = 'This is a tooltip Item';
@@ -71,8 +81,8 @@ function injectTooltip(button) {
   tooltip.appendChild(tooltipItem.cloneNode(true));
 
   button.appendChild(tooltip);
-  tooltip.classList.add('tooltip-clicked');
-  }
+  //tooltip.classList.add('tooltip-clicked');
+  
   
 
   
@@ -85,5 +95,5 @@ function eraseTooltips() {
     
   });
 }
-
+ */
 /* if (anyClicked) tooltip.classList.remove('tooltip-clicked'); */

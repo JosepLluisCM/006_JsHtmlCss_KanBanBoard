@@ -52,16 +52,44 @@ document.getElementById("list-creator-button").addEventListener('click', () => {
 });
 
 
+//Listen for the buttons
+const headerButtonsList = document.querySelectorAll('.header-buttons');
+headerButtonsList.forEach( (button) => {
+  button.addEventListener('click', () => {
+    let tooltip = button.childNodes[3];
+    if (tooltip.classList.contains('tooltip-clicked')) {
+      tooltip.classList.remove('tooltip-clicked');
+    }
+    else {
+      eraseTooltips();
+      tooltip.classList.add('tooltip-clicked');
+    }
+
+  });
+});
+
+
+
+/* 
+JS CREATION OF TOOLTIP, PARKED FOR NOW
 //add listeners for the header buttons
 
 const headerButtonsList = document.querySelectorAll('.header-buttons');
+console.log(typeof(headerButtonsList));
+headerButtonsList.forEach( (button) => {
+  console.log(button);
+  //createTooltip(button);
+});
+
+
 //console.log(headerButtonsList);
 let anyClicked = false;
 headerButtonsList.forEach( (button) => {
   button.addEventListener('click', () => {
-    eraseTooltips();
+    console.log(button);
+    //createTooltip(button);
   
-    injectTooltip(button, anyClicked);
+    
     
   });
-});
+}); */

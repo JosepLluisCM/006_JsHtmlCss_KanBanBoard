@@ -37,13 +37,14 @@
   position: absolute;
   border: 1px solid var(--bg-accent-color);
   z-index: 10;
-  width: 200px;
+  width: 275px;
   top: 44px;
   left: 0px;
   background-color: var(--card-bg-color);
   border-radius: 5px;
   pointer-events: none;
   opacity: 0;
+  transition: opacity 0.15s;
 }
 .tooltip-clicked {
   opacity: 1;
