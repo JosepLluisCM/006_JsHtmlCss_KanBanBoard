@@ -29,12 +29,22 @@ function injectList(list) {
   listCards.classList.add('list-cards');
   listContent.appendChild(listCards);
   //Iterate cards on list and append to listCards
-  list.cards.forEach(cardFromList => {
+  list.cards.forEach((cardFromList, cardIndex) => {
     const card = document.createElement('div');
     card.classList.add('card');
     card.textContent = cardFromList;
     listCards.appendChild(card);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'c') {
+        card.addEventListener('click', () => {
+          deleteCard(list.title, cardIndex);
+        }, {once: true});
+      }
+    }, {once: true});
   });
+
+
 
   //Creation of the Card creator footer
   const cardCreator = document.createElement('div');
@@ -58,7 +68,7 @@ function injectList(list) {
     {
       value: inputCard,
       button: inputCardButton,
-      edit: editIcon
+      edit: editIcon,
     },
     modal
   ];
@@ -90,8 +100,12 @@ function editListModal(listHeader) {
     deleteIcon.classList.add('fa-skull-crossbones');
     deleteButton.textContent = 'Delete List ';
     deleteButton.appendChild(deleteIcon);
-
     renameList.appendChild(deleteButton);
+
+    const note = document.createElement('p');
+    note.textContent = '*To delete a card, click it while pressing C*';
+    renameList.appendChild(note);
+
   editList.appendChild(renameList);
 listHeader.appendChild(editList);
 

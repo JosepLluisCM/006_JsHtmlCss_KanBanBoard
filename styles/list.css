@@ -65,14 +65,19 @@
   flex-direction: column;
   margin: auto;
   width: 350px;
-  height: 150px;
+  height: 200px;
   background-color: var(--bg-color);
   border: 1px solid var(--bg-accent-color);
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   justify-content: space-between;
   align-items: center;
 }
+
+.rename-list p {
+  font-size: 12px;
+}
+
 .rename-input {
   width: 250px;
   height: 30px;
@@ -82,13 +87,14 @@
   border: 1px solid var(--bg-accent-color);
   border-radius: 5px;
   padding: 5px 10px;
+  margin-top: 10px;
 }
 .rename-input::placeholder {
   color: var(--text-gray-color);
 }
 .rename-button {
-  width: 100px;
-  height: 25px;
+  width: 80px;
+  height: 30px;
   background: none;
   border: 1px solid var(--bg-accent-color);
   border-radius: 5px;
@@ -99,9 +105,9 @@
   background-color: rgba(255,255,255,0.2);
 }
 .delete-button {
-  margin-top: 20px;
-  width: 100px;
-  height: 25px;
+  margin-top: 10px;
+  width: 120px;
+  height: 40px;
   background: none;
   border: 1px solid var(--bg-accent-color);
   border-radius: 5px;
@@ -110,6 +116,11 @@
 }
 .delete-button:hover {
   background-color: rgba(255,255,255,0.2);
+}
+
+.delete-button i {
+  pointer-events: none;
+  margin-left: 5px;
 }
 
 

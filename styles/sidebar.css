@@ -8,6 +8,7 @@
   flex-direction: column;
   background-color: var(--bg-sidebar-color);
   backdrop-filter: blur(6px);
+  white-space: nowrap;
 }
 .sidebar-out {
   min-width: 0px;

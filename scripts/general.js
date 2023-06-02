@@ -6,8 +6,6 @@ function renderBoard() {
 
   document.getElementById('listsArray').innerHTML = "";
 
-  
-
   listsArr.forEach( (list, index) => {
     //first we write a list to the html file
     const listInfo = injectList(list);
@@ -15,9 +13,18 @@ function renderBoard() {
     listInfo[0].button.addEventListener('click', () => {
       if (listInfo[0].value.value.length) {
         list.cards.push(listInfo[0].value.value);
+        listInfo[0].value.value = '';
         renderBoard();
       };
     });
+    document.addEventListener('keydown', (e) => {
+      if (listInfo[0].value.value.length && e.key === 'Enter') {
+        list.cards.push(listInfo[0].value.value);
+        listInfo[0].value.value = '';
+        renderBoard();
+      };
+    });
+
     //we listen for the edit button press
     listInfo[0].edit.addEventListener('click', () => {
       listInfo[1].modalWrapper.classList.remove('edit-list-hidden');
@@ -45,6 +52,11 @@ function renderBoard() {
   });
 }
 
+function deleteCard(listTitle, cardIndex) {
+  const listIndex = listsArr.findIndex( list => list.title === listTitle);
+  listsArr[listIndex].cards.splice(cardIndex, 1);
+  renderBoard();
+}
 
 
 //Add list to listArr
@@ -55,19 +67,19 @@ function addList(listTitle) {
     cards: []
   }
   listsArr.push(list);
-  
   renderBoard();
+
+  document.querySelector('.newList').value = '';
 }
 
 //listener for the add list button
 document.getElementById("list-creator-button").addEventListener('click', () => {
-  
-  let listInput = document.querySelector('.newList').value;
-  if (listInput.length) {
-    //console.log(listInput);
-    addList(listInput);
-    document.querySelector('.newList').value = '';
+  if (document.querySelector('.newList').value.length) {
+    addList(document.querySelector('.newList').value);
   };
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && document.querySelector('.newList').value.length) addList(document.querySelector('.newList').value);
 });
 
 
