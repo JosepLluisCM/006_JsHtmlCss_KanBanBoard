@@ -49,7 +49,7 @@ function renderBoard() {
         listInfo[1].modalWrapper.classList.add('edit-list-hidden');
       });
     });
-  });
+  });  
 }
 
 function deleteCard(listTitle, cardIndex) {
@@ -121,6 +121,12 @@ retract.addEventListener('click', () => {
     sidebar.classList.remove('sidebar-out');
   }
 });
+
+
+
+
+
+
 
 /* 
 JS CREATION OF TOOLTIP, PARKED FOR NOW

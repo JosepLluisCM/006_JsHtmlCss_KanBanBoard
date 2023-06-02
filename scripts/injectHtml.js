@@ -4,6 +4,8 @@ function injectList(list) {
   //Creation of list container and content
   const listContainer = document.createElement('div');
   listContainer.classList.add('list-container');
+  listContainer.classList.add('draggable');
+  listContainer.draggable = true;
 
   const listContent = document.createElement('div');
   listContent.classList.add('list-content');
@@ -62,6 +64,10 @@ function injectList(list) {
   
   //We insert the list created with JS before the list creator
   listsArray.appendChild(listContainer);
+
+  //Here we put list Container to the draggable array, for use is dragElement.js
+  /* draggables.push(listContainer);
+  console.log(draggables); */
 
   //we return all info we need, the input text and button for listener
   const listInfo = [
