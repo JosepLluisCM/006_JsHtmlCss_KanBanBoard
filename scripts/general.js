@@ -6,7 +6,9 @@ function renderBoard() {
 
   document.getElementById('listsArray').innerHTML = "";
 
-  listsArr.forEach( (list) => {
+  
+
+  listsArr.forEach( (list, index) => {
     //first we write a list to the html file
     const listInfo = injectList(list);
     //next we listen for the addCCart button
@@ -22,10 +24,23 @@ function renderBoard() {
       
       //Multiple options, we listen for escape and exit the modal
       document.addEventListener('keydown', (event) => {
-        //console.log(event);
         if (event.key === 'Escape') listInfo[1].modalWrapper.classList.add('edit-list-hidden');
       });
-
+      //if the change name is clicked, we update the list and render the board again, closing the modal
+      listInfo[1].renameButton.addEventListener('click', () => {
+        //console.log(listInfo[1].renameInput.value);
+        if(listInfo[1].renameInput.value.length) {
+          list.title = listInfo[1].renameInput.value;
+          renderBoard();
+          listInfo[1].modalWrapper.classList.add('edit-list-hidden');
+        }
+      });
+      //if we press delete button, remove list from listArr and renderBoard
+      listInfo[1].deleteButton.addEventListener('click', () => {
+        listsArr.splice(index, 1);
+        renderBoard();
+        listInfo[1].modalWrapper.classList.add('edit-list-hidden');
+      });
     });
   });
 }

@@ -33,6 +33,7 @@
   justify-content: center;
   align-items: center;
   margin-right: 3px;
+  margin-bottom: 10px;
 }
 .list-title i {
   margin-left: auto;
@@ -63,15 +64,52 @@
   display: flex;
   flex-direction: column;
   margin: auto;
+  width: 350px;
+  height: 150px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--bg-accent-color);
+  border-radius: 10px;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
 }
 .rename-input {
-
+  width: 250px;
+  height: 30px;
+  color: var(--text-gray-color);
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--bg-accent-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.rename-input::placeholder {
+  color: var(--text-gray-color);
 }
 .rename-button {
-
+  width: 100px;
+  height: 25px;
+  background: none;
+  border: 1px solid var(--bg-accent-color);
+  border-radius: 5px;
+  color: var(--text-gray-color);
+  transition: background-color 0.15s;
+}
+.rename-button:hover {
+  background-color: rgba(255,255,255,0.2);
 }
 .delete-button {
-
+  margin-top: 20px;
+  width: 100px;
+  height: 25px;
+  background: none;
+  border: 1px solid var(--bg-accent-color);
+  border-radius: 5px;
+  color: var(--text-gray-color);
+  transition: background-color 0.15s;
+}
+.delete-button:hover {
+  background-color: rgba(255,255,255,0.2);
 }
 
 

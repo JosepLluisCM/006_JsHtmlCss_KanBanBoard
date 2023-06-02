@@ -83,7 +83,14 @@ function editListModal(listHeader) {
     renameList.appendChild(renameButton);
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete-button');
-    deleteButton.textContent = 'Delete List';
+    
+
+    const deleteIcon = document.createElement('i');
+    deleteIcon.classList.add('fa-solid');
+    deleteIcon.classList.add('fa-skull-crossbones');
+    deleteButton.textContent = 'Delete List ';
+    deleteButton.appendChild(deleteIcon);
+
     renameList.appendChild(deleteButton);
   editList.appendChild(renameList);
 listHeader.appendChild(editList);
