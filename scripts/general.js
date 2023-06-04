@@ -23,8 +23,9 @@ function renderBoard() {
         listInfo[0].value.value = '';
         renderBoard();
       };
-    });
 
+    });
+    listInfo[0].value.focus();
     //we listen for the edit button press
     listInfo[0].edit.addEventListener('click', () => {
       listInfo[1].modalWrapper.classList.remove('edit-list-hidden');
@@ -76,10 +77,14 @@ function addList(listTitle) {
 document.getElementById("list-creator-button").addEventListener('click', () => {
   if (document.querySelector('.newList').value.length) {
     addList(document.querySelector('.newList').value);
+    document.querySelector('.newList').focus();
   };
 });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && document.querySelector('.newList').value.length) addList(document.querySelector('.newList').value);
+  if (e.key === 'Enter' && document.querySelector('.newList').value.length) {
+    addList(document.querySelector('.newList').value);
+    document.querySelector('.newList').focus();
+  } 
 });
 
 
