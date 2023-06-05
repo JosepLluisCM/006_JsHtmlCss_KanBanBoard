@@ -2,6 +2,7 @@
 //In this array is saved all lists in thge page
 let listsArr = [];
 
+
 function renderBoard() {
 
   document.getElementById('listsArray').innerHTML = "";
@@ -23,9 +24,8 @@ function renderBoard() {
         listInfo[0].value.value = '';
         renderBoard();
       };
-
     });
-    listInfo[0].value.focus();
+    //listInfo[0].value.focus();
     //we listen for the edit button press
     listInfo[0].edit.addEventListener('click', () => {
       listInfo[1].modalWrapper.classList.remove('edit-list-hidden');
@@ -50,7 +50,8 @@ function renderBoard() {
         listInfo[1].modalWrapper.classList.add('edit-list-hidden');
       });
     });
-  });  
+  }); 
+  setDragLists(); 
 }
 
 function deleteCard(listTitle, cardIndex) {

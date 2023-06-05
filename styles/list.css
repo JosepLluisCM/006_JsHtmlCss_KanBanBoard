@@ -9,6 +9,14 @@
   margin: 0 8px 15px 5px;
 }
 
+.dragList{
+  cursor: move;
+}
+
+.dragList.list-dragging {
+  opacity: 0.2;
+}
+
 .list-content {
   display: flex;
   flex-direction: column;

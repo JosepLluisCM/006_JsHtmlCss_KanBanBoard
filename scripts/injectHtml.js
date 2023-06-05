@@ -4,7 +4,7 @@ function injectList(list) {
   //Creation of list container and content
   const listContainer = document.createElement('div');
   listContainer.classList.add('list-container');
-  listContainer.classList.add('draggable');
+  listContainer.classList.add('dragList');
   listContainer.draggable = true;
 
   const listContent = document.createElement('div');
@@ -64,10 +64,6 @@ function injectList(list) {
   
   //We insert the list created with JS before the list creator
   listsArray.appendChild(listContainer);
-
-  //Here we put list Container to the draggable array, for use is dragElement.js
-  /* draggables.push(listContainer);
-  console.log(draggables); */
 
   //we return all info we need, the input text and button for listener
   const listInfo = [
@@ -130,40 +126,3 @@ function eraseTooltips() {
     tooltip.classList.remove('tooltip-clicked');
   });
 }
-
-/*
-JS CREATION OF TOOLTIP, PARKED FOR NOW
-
-
-//create the tooltip from scratch and show it in the page
-
-function createTooltip(button) {
-  //console.log(button);
-  
-  tooltip = document.createElement('div');
-  tooltip.classList.add('tooltip');
-
-  const tooltipItem = document.createElement('div');
-  tooltipItem.textContent = 'This is a tooltip Item';
-  tooltipItem.classList.add('tooltip-item');
-
-  tooltip.appendChild(tooltipItem);
-  tooltip.appendChild(tooltipItem.cloneNode(true));
-
-  button.appendChild(tooltip);
-  //tooltip.classList.add('tooltip-clicked');
-  
-  
-
-  
-}
-
-function eraseTooltips() {
-  headerButtonsList.forEach( (button) => {
-    console.log(button.childNodes);
-    if(button.childNodes.length === 3) button.childNodes[2].remove();
-    
-  });
-}
- */
-/* if (anyClicked) tooltip.classList.remove('tooltip-clicked'); */
