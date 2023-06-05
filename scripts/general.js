@@ -74,6 +74,24 @@ function addList(listTitle) {
   document.querySelector('.newList').value = '';
 }
 
+//modify listPosition in array, needed for the drag operations
+function modList (current, next) {
+  const currentTitle = current.firstChild.firstChild.innerText;
+  const nextTitle = next.firstChild.firstChild.innerText;  
+  const currentIndex = listsArr.findIndex( list => list.title === currentTitle);
+  element = listsArr.splice(currentIndex, 1);
+  const nextIndex = listsArr.findIndex( list => list.title === nextTitle);
+  listsArr.splice(nextIndex, 0, element[0]);
+
+}
+//If the card needs to be last, only remove it and push to array
+function modListtoEnd (current) {
+  const currentTitle = current.innerText;
+  const currentIndex = listsArr.findIndex( list => list.title === currentTitle);
+  element = listsArr.splice(currentIndex, 1);
+  listsArr.push(element[0]);
+}
+
 //listener for the add list button
 document.getElementById("list-creator-button").addEventListener('click', () => {
   if (document.querySelector('.newList').value.length) {

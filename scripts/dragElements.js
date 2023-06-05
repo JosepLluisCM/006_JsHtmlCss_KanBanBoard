@@ -1,13 +1,12 @@
+//Here we set up for the drag operations, first only the lists
+
 function setDragLists() {
 
   const dragLists = document.querySelectorAll('.dragList');
   const dragListsCont = document.getElementById('listsArray');
 
-  /* console.log(dragLists);
-  console.log(dragListsCont); */
-
   dragLists.forEach( dragList => {
-
+    //We set up the dragging class to separate the item, and change it class appearance
     dragList.addEventListener('dragstart', () => {
       dragList.classList.add('list-dragging');
     });
@@ -17,23 +16,25 @@ function setDragLists() {
     });
   });
 
-  
-    dragListsCont.addEventListener('dragover', e => {
-      e.preventDefault();
-      const passedElement = getPassedList(dragListsCont, e.clientX);
-      //console.log(passedElement);
-      const draggable = document.querySelector('.list-dragging');
-      dragListsCont.insertBefore(draggable, passedElement);
-      //console.log(draggable);
-      
+  //As we grag over, we determine the position it needs to be
+  dragListsCont.addEventListener('dragover', e => {
+    e.preventDefault();
+    const passedElement = getPassedList(dragListsCont, e.clientX);
     
-    });
-  
+    const draggable = document.querySelector('.list-dragging');
+    dragListsCont.insertBefore(draggable, passedElement);
+    
+    if (passedElement == null) {
+      modListtoEnd(draggable);
+    } else {
+      modList(draggable, passedElement);
+    }
+  });
 }
 
+//function to update list position
 function getPassedList(container, x) {
   const dragElements = [...container.querySelectorAll('.dragList:not(.list-dragging')];
-  //console.log(dragElements);
 
   return dragElements.reduce( (closest, child) => {
     const box = child.getBoundingClientRect();
@@ -43,7 +44,5 @@ function getPassedList(container, x) {
     if (offset < 0 && offset > closest.offset) {
       return { offset: offset, element: child}
     } else return closest
-
-
   }, {offset: Number.NEGATIVE_INFINITY}).element;
 }
