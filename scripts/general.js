@@ -1,7 +1,8 @@
-
+let listsArr = JSON.parse(sessionStorage.getItem('listsArr'));
 //In this array is saved all lists in thge page
-let listsArr = [];
-
+if (listsArr === null) {
+  listsArr = [];
+}
 
 function renderBoard() {
 
@@ -53,7 +54,13 @@ function renderBoard() {
   }); 
   setDragLists(); 
   /* setDragCards(); */
+
+  sessionStorage.setItem('listsArr', JSON.stringify(listsArr));
 }
+
+window.addEventListener("load", () => {
+  renderBoard();
+});
 
 function deleteCard(listTitle, cardIndex) {
   const listIndex = listsArr.findIndex( list => list.title === listTitle);
@@ -84,6 +91,8 @@ function modList (current, next) {
   const nextIndex = listsArr.findIndex( list => list.title === nextTitle);
   listsArr.splice(nextIndex, 0, element[0]);
 
+  sessionStorage.setItem('listsArr', JSON.stringify(listsArr));
+
 }
 //If the card needs to be last, only remove it and push to array
 function modListtoEnd (current) {
@@ -91,6 +100,8 @@ function modListtoEnd (current) {
   const currentIndex = listsArr.findIndex( list => list.title === currentTitle);
   element = listsArr.splice(currentIndex, 1);
   listsArr.push(element[0]);
+
+  sessionStorage.setItem('listsArr', JSON.stringify(listsArr));
 }
 
 //listener for the add list button
@@ -132,10 +143,20 @@ headerButtonsList.forEach( (button) => {
 
   });
 });
-
-//listen for the retract sidebar button
+//window.localStorage.clear();
+//listen for the retract sidebar button and local storage set up
+/* const retract = JSON.parse(localStorage.getItem('retract'));
+const sidebar = JSON.parse(localStorage.getItem('sidebar'));
+if (retract === null) {
+  retract = document.getElementById('retract-button');
+  console.log(retract);
+}
+if (sidebar === null) {
+  sidebar = document.getElementById('sidebar');
+} */
 const retract = document.getElementById('retract-button');
 const sidebar = document.getElementById('sidebar');
+
 retract.addEventListener('click', () => {
   if(!retract.classList.contains('retract-clicked')) {
     retract.classList.add('retract-clicked');
@@ -145,6 +166,9 @@ retract.addEventListener('click', () => {
     retract.classList.remove('retract-clicked');
     sidebar.classList.remove('sidebar-out');
   }
+  /* localStorage.setItem('retract', JSON.stringify(retract));
+  localStorage.setItem('sidebar', JSON.stringify(sidebar)); */
+  
 });
 
 
