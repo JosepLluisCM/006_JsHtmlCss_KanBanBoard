@@ -29,11 +29,14 @@ function injectList(list) {
   //Creation of card list container
   let listCards = document.createElement('div');
   listCards.classList.add('list-cards');
+  /* listCards.classList.add('dragCards-container'); */
   listContent.appendChild(listCards);
   //Iterate cards on list and append to listCards
   list.cards.forEach((cardFromList, cardIndex) => {
     const card = document.createElement('div');
     card.classList.add('card');
+    /* card.classList.add('dragCard');
+    card.draggable = true; */
     card.textContent = cardFromList;
     listCards.appendChild(card);
 

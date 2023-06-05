@@ -52,6 +52,7 @@ function renderBoard() {
     });
   }); 
   setDragLists(); 
+  /* setDragCards(); */
 }
 
 function deleteCard(listTitle, cardIndex) {

@@ -15,6 +15,7 @@
 
 .dragList.list-dragging {
   opacity: 0.2;
+  
 }
 
 .list-content {
@@ -165,6 +166,14 @@
   padding: 10px;
   margin-right: 2px;
 }
+
+/* .dragCard{
+  cursor: move;
+}
+.dragCard.card-dragging {
+  opacity: 0.2;
+  
+} */
 
 .card-creator {
   padding: 5px;
